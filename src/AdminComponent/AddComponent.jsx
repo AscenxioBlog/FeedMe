@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import CustomInput from '../ReusableComponent/MyInput/CustomInput';
 import { TbHomePlus } from "react-icons/tb";
 import Dropzone from '../ReusableComponent/Dropzone/Dropzone'
+import API_URL from '../Config'
 
 // import CustomInput from './CustomInput';
 
@@ -33,7 +34,7 @@ function AddComponent() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/add", {
+      const response = await fetch("API_URL/add", {
         method: 'POST',
         body: formData,
       }); 

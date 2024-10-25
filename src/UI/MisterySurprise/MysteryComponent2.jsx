@@ -32,7 +32,7 @@ function MysteryComponent2() {
                 <span className='md:text-[18px] lg:text-[20px]'>or next working day!</span>
                 </section>
             </div>
-            <div className="h-[400px] bg-red-400">
+            <div className="h-[400px] bg-red-400 overflow-hidden">
             <Slider  {...settings}>
         <div className="  h-[400px] w-full bg-[cadetblue] flex justify-center items-center">
                 <img src={gift2} alt="" />
