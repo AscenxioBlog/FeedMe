@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // import React from "react";
 import Slider from "react-slick";
-const imageBaseUrl = "http://localhost:5000"; // Base URL of your server
+const imageBaseUrl = "https://online-food-backend-jbyy.onrender.com"; // Base URL of your server
 import API_URL from '../../Config'
 
 
@@ -10,7 +10,7 @@ function IndexComponent2() {
   let [someRestaurant,setSomerestaurant] = useState([]);
 
   useEffect(()=>{
-    fetch('https://online-food-backend-jbyy.onrender.com/api/fewrestaurants')
+    fetch('API_URL/api/fewrestaurants')
       .then(res=>res.json())
       .then(json=>setSomerestaurant(json))
       .catch(err=>console.log(`Error:${err}`))
