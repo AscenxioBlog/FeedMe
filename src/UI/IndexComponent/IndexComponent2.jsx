@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 // import React from "react";
 import Slider from "react-slick";
 const imageBaseUrl = "https://online-food-backend-jbyy.onrender.com"; // Base URL of your server
-import API_URL from '../../Config'
+import API_URL from "../../Config";
 
 
 function IndexComponent2() {
   let [someRestaurant,setSomerestaurant] = useState([]);
 
   useEffect(()=>{
-    fetch('API_URL/api/fewrestaurants')
+    fetch(`${API_URL}/api/fewrestaurants`)
       .then(res=>res.json())
       .then(json=>setSomerestaurant(json))
       .catch(err=>console.log(`Error:${err}`))
