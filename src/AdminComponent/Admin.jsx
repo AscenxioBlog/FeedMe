@@ -22,9 +22,9 @@ function Admin() {
     <div className=" h-[100vh] relative flex bg-gray-100 p-5 text-[14px] gap-[20px]">
       <nav
         style={{ width: forwidth }}
-        className={`absolute md:relative ${showMe ? '-left-full' : 'left-0'} group transition-all duration-700 bg-foraside rounded-[15px] text-white flex flex-col gap-3 p-[20px]  `}
+        className={`absolute  md:relative ${showMe ? '-left-full' : 'left-0'} group transition-all duration-700 bg-foraside rounded-[15px] text-white flex flex-col gap-3 p-[20px] overflow-x-hidden   `}
       >
-        <div className=" absolute right-[-20px] duration-300 group-hover:right-[-10px] group-hover:opacity-100 opacity-0 top-10 ">
+        <div  className="  absolute  right-[70px]  duration-300 group-hover:right-[-10px] group-hover:opacity-100 opacity-0 top-10 ">
           {forwidth == "220px" ? (
             <button
               className=" bg-gray-100 p-[3px] text-[#5F8670] rounded-[10px]"
@@ -52,7 +52,7 @@ function Admin() {
               " rounded-[5px] pl-[25px]"
             }
           >
-            <Link to="/admin/view" className="  flex gap-[6px] items-center">
+            <Link to="" className="  flex gap-[6px] items-center">
               View
             </Link>
           </li>

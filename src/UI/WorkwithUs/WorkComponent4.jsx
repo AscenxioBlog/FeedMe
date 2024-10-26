@@ -102,7 +102,7 @@ function WorkComponent4() {
                
                <CustomInput
                     type="radio"
-                 name="bike"
+                 name="student"
                     required 
                 //    placeholder= 'First Name'
                     className='bb h-[20px] w-[20px] bg-[transparent] rounded-[5px]'
@@ -115,7 +115,7 @@ function WorkComponent4() {
               
               <CustomInput
                    type="radio"
-                name="bike"
+                name="student"
                    required 
                 //   placeholder= 'First Name'
                    className='bb h-[20px] w-[20px] bg-[transparent] rounded-[5px]'
@@ -137,7 +137,7 @@ function WorkComponent4() {
                
                <CustomInput
                     type="radio"
-                 name="bike"
+                 name="license"
                     required 
                 //    placeholder= 'First Name'
                     className='bb h-[20px] w-[20px] bg-[transparent] rounded-[5px]'
@@ -150,7 +150,7 @@ function WorkComponent4() {
               
               <CustomInput
                    type="radio"
-                name="bike"
+                name="license"
                    required 
                 //   placeholder= 'First Name'
                    className='bb h-[20px] w-[20px] bg-[transparent] rounded-[5px]'
@@ -167,7 +167,7 @@ function WorkComponent4() {
                
                <CustomInput
                     type="radio"
-                 name="bike"
+                 name="phone"
                     required 
                 //    placeholder= 'First Name'
                     className='bb h-[20px] w-[20px] bg-[transparent] rounded-[5px]'
@@ -180,7 +180,7 @@ function WorkComponent4() {
               
               <CustomInput
                    type="radio"
-                name="bike"
+                name="phone"
                    required 
                 //   placeholder= 'First Name'
                    className='bb h-[20px] w-[20px] bg-[transparent] rounded-[5px]'
@@ -192,6 +192,7 @@ function WorkComponent4() {
             </div>
             
         </div>
+        <br />
         <CustomInput
                             type="submit"
                             name=""

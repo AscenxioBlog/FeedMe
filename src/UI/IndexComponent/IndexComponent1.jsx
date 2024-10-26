@@ -35,13 +35,13 @@ function IndexComponent1() {
             <div className=" h-[50px] w-full  flex justify-center items-center text-[25px] font-bold text-white mb-3"> OUR SERVICES</div>
             <div className=" h-[150px] text-white w-[90%] md:w-[60%] lg:w-[60%] bg- grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5">
                 <div className="child bg-[] flex  justify-center flex-col items-center">
-                    <div className=" h-[100px] w-[100px] bg-[wheat] rounded-[50%]">
+                    <div className="h-[80px] w-[80px] md:h-[100px] md:w-[100px] bg-[wheat] rounded-[50%]">
                         <img src={food} alt=""  />
                     </div>
                     <h1 className=' font-bold mt-2'>Food</h1>
                 </div>
                 <div className="child bg-[] flex justify-center flex-col items-center">
-                <div className=" h-[100px] w-[100px] bg-[wheat] rounded-[50%]">
+                <div className="h-[80px] w-[80px] md:h-[100px] md:w-[100px] bg-[wheat] rounded-[50%]">
                         <img src={pharmacy} alt="" />
                     </div>
                     <h1 className=' font-bold mt-2 text-center'>Catering services</h1>
@@ -49,7 +49,7 @@ function IndexComponent1() {
                 </div>
 
                 <div className="child bg-[] flex justify-center flex-col items-center">
-                <div className="  h-[100px] w-[100px] bg-[wheat] rounded-[50%]">
+                <div className=" h-[80px] w-[80px] md:h-[100px] md:w-[100px] bg-[wheat] rounded-[50%]">
                         <img src={pack} alt="" />
                     </div>
                     <h1 className=' font-bold mt-2 text-center'>Package Delivery</h1>
@@ -58,7 +58,7 @@ function IndexComponent1() {
 
 
                 <div className="child bg-[] flex justify-center flex-col items-center">
-                <div className="  h-[100px] w-[100px] bg-[wheat] rounded-[50%]">
+                <div className="  h-[80px] w-[80px] md:h-[100px] md:w-[100px] bg-[wheat] rounded-[50%]">
                         <img src={place} alt="" />
                     </div>
                     <h1 className=' font-bold mt-2 text-center'>Surprise Delivery</h1>
@@ -67,7 +67,7 @@ function IndexComponent1() {
 
 
                 <div className="child bg-[] flex justify-center flex-col items-center">
-                <div className="  h-[100px] w-[100px] bg-[wheat] rounded-[50%]  ">
+                <div className="  h-[80px] w-[80px] md:h-[100px] md:w-[100px] bg-[wheat] rounded-[50%]  ">
                         <img src={cola} alt="" />
                     </div>
                     <h1 className=' font-bold mt-2 text-center'>Suprise Package </h1>

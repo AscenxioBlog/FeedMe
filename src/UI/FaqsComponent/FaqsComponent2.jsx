@@ -62,7 +62,7 @@ function FaqsComponent2() {
             <h1 className=' h-[70px] bg-[] text-[20px] font-bold flex items-center justify-between' onClick={
                 function () {
                    if (Tall2 == '70px') {
-                    setTall2('200px')
+                    setTall2('220px')
                     setTall1('70px')
                     setTall3('70px')
                     setTall4('70px')
@@ -128,7 +128,7 @@ function FaqsComponent2() {
             <h1 className=' h-[70px] bg-[] text-[20px] font-bold flex items-center justify-between' onClick={
                 function () {
                    if (Tall4 == '70px') {
-                    setTall4('200px')
+                    setTall4('220px')
                     setTall1('70px')
                     setTall2('70px')
                     setTall3('70px')
@@ -161,7 +161,7 @@ function FaqsComponent2() {
             <h1 className=' h-[70px] bg-[] text-[20px] font-bold flex items-center justify-between' onClick={
                 function () {
                    if (Tall5 == '70px') {
-                    setTall5('200px')
+                    setTall5('220px')
                     setTall1('70px')
                     setTall2('70px')
                     setTall3('70px')

@@ -117,7 +117,7 @@ function IndexComponent4() {
             </div>
         </section>
  
-        <div className=" min-h-[60px] md:min-h-[100px] w-[80%] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4  gap-3 bg-[#5F8670] absolute mb-[100px] mt-10 md:mb-0 bottom-[-150px] md:bottom-[-50px] rounded-[10px]">
+        <div className=" min-h-[60px] md:min-h-[100px] w-[95%] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4  gap-3 bg-[#5F8670] absolute mb-[100px] mt-10 md:mb-0 bottom-[-150px] md:bottom-[-50px] rounded-[10px]">
             <div className="h-[40px] md:h-[100px] bg-[] text-white  flex justify-center items-center">
                 <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>Restaurant:</span> <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>{restaurant}+</span>
             </div>

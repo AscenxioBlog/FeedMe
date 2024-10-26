@@ -93,7 +93,7 @@ function HeaderComponent({
         <div className="bg-[] flex justify-center items-center relative gap-4 pr-3">
           {username}
           <button
-            className="h-[40px] w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
+            className="h-[40px] w-[70px] md:h-[40px] md:w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
             onClick={toggleCartVisibility}
           >
             <FaCartArrowDown size={18} />
@@ -108,7 +108,7 @@ function HeaderComponent({
             // Show user profile if logged in
             <button
               onClick={() => setShowProfile(showProfile === '0' ? '1' : '0')}
-              className="h-[40px] w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
+              className="h-[40px] w-[40px]h-[40px] w-[70px] md:h-[40px] md:w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
             >
               <LuUser2 size={20} />
             </button>
@@ -116,7 +116,7 @@ function HeaderComponent({
             // Show login button if not authenticated
             <button
               onClick={() => setLogin("0")}
-              className="h-[40px] w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
+              className="h-[40px] w-[70px] md:h-[40px] md:w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
             >
               <LuUser2 size={20} />
             </button>

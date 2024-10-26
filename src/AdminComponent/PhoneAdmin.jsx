@@ -8,7 +8,7 @@ function PhoneAdmin(props) {
     //     setShowus('-300px')
     // }
   return (
-    <div className=' absolute top-0 bottom-0 w-[300px] md:hidden bg-gray-900 z-10 mt-[100px]' style={{left:props.showMe, transition:'1s'}}>
+    <div className=' absolute top-0 bottom-0 w-[300px]  md:hidden bg-gray-900 z-10 mt-[100px]' style={{left:props.showMe, transition:'1s'}}>
         
       <div className="  bg-red-300 overflow-y-scroll">
             <section className=" bg-slate-200 w-full">

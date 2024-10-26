@@ -10,7 +10,7 @@ const imageBaseUrl = "http://localhost:5000"; // Base URL of your server
 import CustomButton from "../../ReusableComponent/MyButton/CustomButton";
 import RestuarantComponentPic from "./RestuarantComponentPic";
 import CustomInput from "../../ReusableComponent/MyInput/CustomInput";
-
+import API_URL from "../../Config";
 
 function Restaurant1Component() {
 
@@ -26,7 +26,7 @@ function Restaurant1Component() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/food-types")
+    fetch(`${API_URL}api/food-types`)
       .then((res) => res.json())
       .then((data) => setFoodtypes(data))
       .catch((err) => console.log(`Error:${err}`));
@@ -45,7 +45,7 @@ function Restaurant1Component() {
     }
     console.log("Query String:", query.toString());
 
-    fetch(`http://localhost:5000/api/restaurants?${query.toString()}`) //fetched from my server
+    fetch(`${API_URL}api/restaurants?${query.toString()}`) //fetched from my server
       .then((response) => response.json()) //convert the response to json. (the response can be anything)
       .then((json) => setHolddata(json)) //(then pass the converted data into a useState)
       .catch((err) => console.log(err)); // if there is any error
