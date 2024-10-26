@@ -10,7 +10,7 @@ function IndexComponent2() {
   let [someRestaurant,setSomerestaurant] = useState([]);
 
   useEffect(()=>{
-    fetch(`${API_URL}/api/fewrestaurants`)
+    fetch(`${API_URL}api/fewrestaurants`)
       .then(res=>res.json())
       .then(json=>setSomerestaurant(json))
       .catch(err=>console.log(`Error:${err}`))
