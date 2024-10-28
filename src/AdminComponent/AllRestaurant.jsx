@@ -59,7 +59,7 @@ function AllRestaurant() {
             restaurantData.map(item=>(
               <tr className='border-[2px]'>
                 <td className=' border-[1px] border-dotted border-emerald-600 py-3 pl-5 w-[15%]'>
-                  <img src={`${API_URL}${item.image}`} className=' h-[50px] w-[80px] rounded-xl'/>
+                  <img src={`${item.image}`} className=' h-[50px] w-[80px] rounded-xl'/>
                 </td>
                 <td className=' border-[1px] border-dotted border-emerald-600 text-[20px] font-bold w-[20%]'>{item.name}</td>
                 <td className=' border-[1px] border-dotted border-emerald-600 '>{item.rating}⭐</td>
