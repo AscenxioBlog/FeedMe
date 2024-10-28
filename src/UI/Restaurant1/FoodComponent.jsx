@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { MdStarBorderPurple500 } from "react-icons/md";
 import { useParams } from 'react-router-dom';
+import { FaNairaSign } from "react-icons/fa6";
 
 function FoodComponent({ addToCart }) {
   const [holdmenu, setHoldmenu] = useState([]);
@@ -60,7 +61,7 @@ function FoodComponent({ addToCart }) {
             <img src={`http://localhost:5000${item.image}`} alt={item.name} className="w-full h-40 object-cover mb-2" />
             <h2 className="text-xl font-bold">{item.name}</h2>
             <p className="text-gray-600">{item.food_description}</p>
-            <p className="text-lg font-bold">${item.price.toFixed(2)}</p>
+            <p className="text-lg font-bold"><FaNairaSign />{item.price.toFixed(2)}</p>
             <button
               className="mt-2 bg-blue-500 text-white py-1 px-3 rounded"
               onClick={() => addToCart({
