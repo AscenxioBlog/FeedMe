@@ -175,7 +175,7 @@ function Restaurant1Component() {
                         <div className=" border-[1px] border-[gray]  w-full rounded-[25px] overflow-">
                           <div className=" h-[200px] w-full md:w-full lg:w-full bg-[] ">
                             <img style={{borderTopLeftRadius:'20px', borderTopRightRadius:'20px'}}
-                              src={`${imageBaseUrl}${item.image}`}
+                              src={`${item.image}`}
                               alt={item.name}
                               height="100%"
                               width="100%"

@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import Dropzone from '../ReusableComponent/Dropzone/Dropzone';
 import CustomInput from '../ReusableComponent/MyInput/CustomInput';
-
+import API_URL from '../Config';
 function AddMenu() {
   const [allRestaurant, setAllRestaurant] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);  // Store the uploaded file
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/restaurants")
+    fetch(`${API_URL}api/restaurants`)
       .then((res) => res.json())
       .then((json) => setAllRestaurant(json));
   }, []);
@@ -27,7 +27,7 @@ function AddMenu() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/add-menu", {
+      const response = await fetch(`${API_URL}add-menu`, {
         method: 'POST',
         body: formData,
       }); 
