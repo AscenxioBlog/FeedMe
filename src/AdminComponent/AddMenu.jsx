@@ -90,7 +90,8 @@ function AddMenu() {
               <div className="">
                 <label htmlFor="restaurant-image">Food Image<span className=' text-[red]'>*</span></label>
                 <br />
-                <Dropzone onFileDrop={handleFileDrop} />  {/* Pass the handler to Dropzone */}
+                {/* <Dropzone onFileDrop={handleFileDrop} />  Pass the handler to Dropzone */}
+                <input type="file" name='restaurantImage' />
               </div>
               <br />
 

@@ -31,7 +31,7 @@ function IndexComponent2() {
                     <div className=" border-[1px] border-[gray] rounded-[25px] bg-[] w-full ">
                       <div className=" h-[200px] w-full  bg-[] ">
                         <img style={{borderTopLeftRadius:'20px', borderTopRightRadius:'20px'}}
-                          src={`${imageBaseUrl}/public${item.image}`}
+                          src={`${item.image}`}
                           alt={item.name}
                           height="100%"
                           width="100%"
