@@ -147,7 +147,7 @@ function HeaderComponent({
       passcancelFunction = {cancelfunction}
       /> */}
 
-      <Userprofile showProfile={showProfile} setShowprofile={setShowProfile} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
+      <Userprofile showProfile={showProfile} username={username} setShowprofile={setShowProfile} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
       <Holdsign login={login} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
 
       <HeaderMini  setOpacity={opacity} setView={view}   dropdown={dropdown}/>

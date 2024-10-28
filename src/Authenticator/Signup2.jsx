@@ -41,6 +41,7 @@ function Signup2({ onLoginSuccess,setusername }) {
           alert(data.message); 
           onLoginSuccess(true, "-130vh");
           setusername(data.username);
+          window.location.reload()
           break;
         case 400:
           alert(data.message); // Handle 400 Bad Request

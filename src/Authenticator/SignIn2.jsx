@@ -38,6 +38,7 @@ function SignIn2({onLoginSuccess,setusername}) {
       if (data.message) {
         alert(data.message)
         onLoginSuccess(true,"-130vh")
+        window.location.reload()
       } 
       
       if (data.emailMessage) {
