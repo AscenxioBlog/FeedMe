@@ -69,7 +69,7 @@ function IndexComponent4() {
 
         <section className=" min-h-[300px] w-[90%] bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] mt-[50px]">
             <div className="h-[300px] bg-white flex flex-col justify-center relative">
-                <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[40%] text-[25px] text-center">1</div>
+                <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[45%] md:right-[40%] text-[25px] text-center">1</div>
                 <div className=" h-[150px] w-full bg-[] flex justify-center items-center">
                 <FaUserAstronaut size={100} color='#E7F0DC' />
                 </div>
@@ -80,7 +80,7 @@ function IndexComponent4() {
             </div>
 
             <div className="h-[300px] bg-white flex flex-col justify-center relative">
-            <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[40%] text-[25px] text-center">2</div>
+            <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[45%] md:right-[40%] text-[25px] text-center">2</div>
 
             <div className=" h-[150px] w-full bg-[] flex justify-center items-center">
             <ImHome size={100} color='#E7F0DC' />
@@ -93,7 +93,7 @@ function IndexComponent4() {
 
 
             <div className="h-[300px] bg-[white] flex flex-col justify-center relative">
-            <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[40%] text-[25px] text-center">3</div>
+            <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[45%] md:right-[40%] text-[25px] text-center">3</div>
  
             <div className=" h-[150px] w-full bg-[] flex justify-center items-center">
             <FaCcMastercard size={100} color='#E7F0DC' />
@@ -105,7 +105,7 @@ function IndexComponent4() {
             </div>
 
             <div className="h-[300px] bg-white flex flex-col justify-center relative">
-            <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[40%] text-[25px] text-center">4</div>
+            <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[45%] md:right-[40%] text-[25px] text-center">4</div>
 
             <div className=" h-[150px] w-full bg-[] flex justify-center items-center">
             <FaTruck  size={100} color='#E7F0DC'/>

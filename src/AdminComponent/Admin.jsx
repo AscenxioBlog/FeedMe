@@ -41,9 +41,9 @@ function Admin() {
             </button>
           )}
         </div>
-        <h1 className=" font-bold flex gap-2 pl-[10px]">
+       <Link to='/'> <h1 className=" font-bold flex gap-2 pl-[10px]">
           <span className=" italic text-[#FF5A3C]">FM</span>ADMIN Dashboard
-        </h1>
+        </h1></Link>
         <hr className=" h-[1px] bg-custom-gradient w-[100%] border-t-0 opacity-[.25]" />
         <ul className=" leading-[47px]">
           <li
