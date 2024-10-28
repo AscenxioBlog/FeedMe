@@ -17,7 +17,7 @@ function Cart({visible , cart, removeFromCart, increaseQuantity, decreaseQuantit
       <ul>
         {cart.map((item, index) => (
           <li key={index} className="border-b py-2 flex items-center">
-            <img src={`http://localhost:5000${item.image}`} alt={item.name} className="w-16 h-16 object-cover mr-4" />
+            <img src={`${item.image}`} alt={item.name} className="w-16 h-16 object-cover mr-4" />
             <div className="flex-1">
               <p className="font-bold">{item.name}</p>
               <p>Price: $ {item.price.toFixed(2)}</p>
