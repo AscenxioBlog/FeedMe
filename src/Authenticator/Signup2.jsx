@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import API_URL from "../Config";
 
 function Signup2({ onLoginSuccess,setusername }) {
   const [formdata, setFormdata] = useState({
@@ -24,7 +25,7 @@ function Signup2({ onLoginSuccess,setusername }) {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/sign-up", {
+      const response = await fetch(`${API_URL}sign-up`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

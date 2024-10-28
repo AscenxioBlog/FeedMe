@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CustomInput from "../ReusableComponent/MyInput/CustomInput";
 // import jwt_decode from 'jwt-decode'
-
+import API_URL from "../Config";
 
 function SignIn2({onLoginSuccess,setusername}) {
   let [signindata, setsignindata] = useState({
@@ -25,7 +25,7 @@ function SignIn2({onLoginSuccess,setusername}) {
   const forhandleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/sign-in", {
+      const response = await fetch(`${API_URL}sign-in`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
