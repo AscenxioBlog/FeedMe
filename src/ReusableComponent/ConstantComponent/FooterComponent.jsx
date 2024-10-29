@@ -5,6 +5,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 import API_URL from '../../Config';
+import { Link } from 'react-router-dom';
 
 function FooterComponent() {
 
