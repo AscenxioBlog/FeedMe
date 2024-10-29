@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { MdStarBorderPurple500 } from "react-icons/md";
 import { useParams } from 'react-router-dom';
 import { FaNairaSign } from "react-icons/fa6";
+import API_URL from "../../Config";
 
 function FoodComponent({ addToCart }) {
   const [holdmenu, setHoldmenu] = useState([]);
@@ -12,7 +13,7 @@ function FoodComponent({ addToCart }) {
 
   useEffect(() => {
     // Fetch the menu for the restaurant
-    fetch(`http://localhost:5000/menu/${restaurantid}`)
+    fetch(`${API_URL}menu/${restaurantid}`)
       .then(res => res.json())
       .then(json => {
         console.log(json);
@@ -58,7 +59,7 @@ function FoodComponent({ addToCart }) {
       <div className="h-auto bg-white w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
         {holdmenu.map((item) => (
           <div key={item._id} className="p-4 border border-gray-200 rounded-lg shadow-md">
-            <img src={`http://localhost:5000${item.image}`} alt={item.name} className="w-full h-40 object-cover mb-2" />
+            <img src={`${item.image}`} alt={item.name} className="w-full h-40 object-cover mb-2" />
             <h2 className="text-xl font-bold">{item.name}</h2>
             <p className="text-gray-600">{item.food_description}</p>
             <p className="text-lg font-bold"><FaNairaSign />{item.price.toFixed(2)}</p>
