@@ -131,7 +131,7 @@ function Payment2() {
         <div className="bg-[] p-2">
           {newcart.map((item, index) => (
             <li key={index} className="border-b py-2 flex items-center">
-              <img src={`${API_URL}${item.image}`} alt={item.name} className="w-16 h-16 object-cover mr-4" />
+              <img src={`${item.image}`} alt={item.name} className="w-16 h-16 object-cover mr-4" />
               <div className="flex-1">
                 <p className="font-bold">{item.name}</p>
                 <p>SubTotal: ${(item.price * item.quantity).toFixed(2)}</p>
