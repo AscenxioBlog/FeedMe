@@ -1,20 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaInstagram } from "react-icons/fa";
 import { RiFacebookFill } from "react-icons/ri";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
+import API_URL from '../../Config';
 
 function FooterComponent() {
+
+    let [someRestaurant,setSomerestaurant] = useState([]);
+
+  useEffect(()=>{
+    fetch(`${API_URL}api/fewrestaurants`)
+      .then(res=>res.json())
+      .then(json=>setSomerestaurant(json))
+      .catch(err=>console.log(`Error:${err}`))
+
+  },[])
   return (
-    <div className='foot min-h-[600px] w-full bg-black'>
+    <div className='foot min-h-[600px] w-full bg-black text-white'>
         <div className=" min-h-[400px] w-full bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[20%,20%,20%,40%]">
             <div className=" bg-[] flex flex-col gap-4 pl-5 lg:pl-0 ">
             <h1 className=' logo text-[35px] font-extrabold text-[#FF5A3C]'>Feed<span className=' text-white'>Me</span></h1>
                 
                 <h1>Contact</h1>
-                <p><a href="">hello@feedmedelivery.com</a></p>
-                <p><a href="">+234 12345678</a></p>
+                <p><a href="">Myona1648@gmail.com</a></p>
+                <p><a href="">08057320503</a></p>
             </div>
 
             <div className=" bg-[] flex flex-col gap-4 lg:items-center pl-5 lg:pl-0">
@@ -34,53 +45,24 @@ function FooterComponent() {
                 <span><a href="">Victoria Island</a></span>
             </div>
             <div className=" bg-[] flex flex-col gap-4 lg:items-center pl-5 lg:pl-0">
-                <h1 className=' text-[25px] font-bold'>Restaurants</h1>
+                <h1 className=' text-white text-[25px] font-bold'>Restaurants</h1>
 
-                <table>
-                    <tbody>
-                        <tr>
-                        <td><a href="">Wing Kings</a></td>
-                        <td><a href="">Good Greens</a></td>
-                        </tr>
-
-                        <tr>
-                        <td><a href="">Jollof & Co</a></td>
-                        <td><a href="">Suya Central</a></td>
-                        </tr>
-
-                        <tr>
-                        <td><a href="">Sweet Treats</a></td>
-                        <td><a href="">Pastry Corner</a></td>
-                        </tr>
-
-                        <tr>
-                        <td><a href="">Sunny Side Club</a></td>
-                        <td><a href="">Fresh Press</a></td>
-                        </tr>
-
-
-                        <tr>
-                        <td><a href="">Mama's Kitchen</a></td>
-                        <td><a href="">Lagos Breakfast Club</a></td>
-                        </tr>
-
-                        <tr>
-                        <td><a href="">Frankies</a></td>
-                        <td><a href="">The Night Train</a></td>
-                        </tr>
-
-
-                        <tr>
-                        <td><a href="">CHoW Asian</a></td>
-                        <td><a href="">Red Pepper</a></td>
-                        </tr>
-
-                        <tr>
-                        <td><a href="">Wrap City</a></td>
-                        <td><a href="">Iya Lati Kitchen</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className="  grid grid-cols-2 gap-3">
+                {someRestaurant
+          ? someRestaurant.map((item) => (
+              <>
+                <Link to={`/menu/${item.name}/${item._id}`} key={item._id}>
+                 
+                          <h1 className=" font-bold text-[17px] mb-1">
+                            {item.name}
+                          </h1>
+                        
+                </Link>
+              </>
+            ))
+          : null}
+                </div>
+                
             </div>
         </div>
 
