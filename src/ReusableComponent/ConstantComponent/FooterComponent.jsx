@@ -19,8 +19,8 @@ function FooterComponent() {
 
   },[])
   return (
-    <div className='foot min-h-[600px] w-full bg-black text-white'>
-        <div className=" min-h-[400px] w-full bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[20%,20%,20%,40%]">
+    <div className='foot min-h-[40px] w-full bg-black text-white'>
+        <div className=" min-h-[250px] w-full bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[20%,20%,20%,40%]">
             <div className=" bg-[] flex flex-col gap-4 pl-5 lg:pl-0 ">
             <h1 className=' logo text-[35px] font-extrabold text-[#FF5A3C]'>Feed<span className=' text-white'>Me</span></h1>
                 
@@ -32,10 +32,10 @@ function FooterComponent() {
             <div className=" bg-[] flex flex-col gap-4 lg:items-center pl-5 lg:pl-0">
                 <h1 className=' text-[25px] font-bold'>Company</h1>
 
-                <span><a href="">Carrers</a></span>
-                <span><a href="">FAQs</a></span>
-                <span><a href="">User Policy</a></span>
-                <span><a href="">Support</a></span>
+                <span><a href="/catering">Catering</a></span>
+                <span><a href="/faqs">FAQs</a></span>
+                <span><a href="/restaurant">Restaurant</a></span>
+                <span><a href="/rider">Rider</a></span>
             </div>
             <div className=" bg-[] flex flex-col gap-4 lg:items-center pl-5 lg:pl-0">
                 <h1 className=' text-[25px] font-bold'>Locations</h1>
@@ -70,7 +70,7 @@ function FooterComponent() {
 
         <div className=" h-[170px] w-full bg-[] text-[25px] font-bold lg:pl-[50px] flex flex-col justify-center">
             <h1 >Socials</h1>
-            <div className=" h-[50px] w-[330px] mt-2 grid grid-cols-5 gap-5">
+            <div className=" h-[50px] w-[330px] mt-2 grid grid-cols-5 gap-5 text-black">
                 <div className=" bg-white rounded-[50%] flex justify-center items-center"><FaInstagram /></div>
                 <div className=" bg-white rounded-[50%] flex justify-center items-center"><RiFacebookFill /></div>
                 <div className=" bg-white rounded-[50%] flex justify-center items-center"> <FaTwitter /></div>
