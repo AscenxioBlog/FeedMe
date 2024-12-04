@@ -6,7 +6,7 @@ import { MdStarBorderPurple500 } from "react-icons/md";
 function RestuarantComponentPic() {
   return (
     <div >
-        <div className=" h-[80vh] w-full bg-slate-400 mt-[70px]">
+        <div className=" h-[40vh] lg:h-[50vh] w-full bg-slate-400 mt-[70px]">
           <img src={ch} alt="" />
 
         </div>

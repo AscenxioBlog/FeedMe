@@ -66,9 +66,9 @@ function Restaurant1Component() {
 
           {foodtypes ? (
             foodtypes.map((foodtype, index) => (
-              <li
+              <div
                 key={index}
-                className=" hover:ml-1 transition-all duration-300 hover:font-bold"
+                className=" hover:ml-1 transition-all duration-300 hover:font-bold grid grid-cols-3 md:grid-cols-1"
               >
                  <CustomButton
                     height="40px"
@@ -79,7 +79,7 @@ function Restaurant1Component() {
                     className="md:rounded-[20px]" // Optional className for additional styling
                     onClick={() => forFoodtypes(foodtype)}
                   />
-              </li>
+              </div>
             ))
           ) : (
             <p>Food types loading...</p>
@@ -87,70 +87,7 @@ function Restaurant1Component() {
             </ul>
           </div>
 
-          {/* <div className="min-h-[40vh] md:h-[60vh] lg:min-h-[80vh] md:w-[80%] lg:w-[60%] bg-[] grid grid-cols-2 gap-5 md:grid-cols-1 mt-5">
-            <CustomButton
-              height="40px"
-              width="150px"
-              // backgroundColor="lime"
-              borderRadius="35%"
-              label="Local Food"
-              className="md:rounded-[20px]" // Optional className for additional styling
-            />
-
-            <CustomButton
-              height="40px"
-              width="150px"
-              // backgroundColor="pink"
-              borderRadius="35%"
-              label="Jollof Rice"
-              className="md:rounded-[20px]"
-            />
-
-            <CustomButton
-              height="40px"
-              width="150px"
-              // backgroundColor="lime-400"
-              borderRadius="35%"
-              label=" Ice Cream"
-              className="md:rounded-[20px]"
-            />
-
-            <CustomButton
-              height="40px"
-              width="150px"
-              // backgroundColor="lime-400"
-              borderRadius="35%"
-              label="Burger"
-              className="md:rounded-[20px]"
-            />
-
-            <CustomButton
-              height="40px"
-              width="150px"
-              // backgroundColor="lime-400"
-              borderRadius="35%"
-              label="Pasta"
-              className="md:rounded-[20px]"
-            />
-
-            <CustomButton
-              height="40px"
-              width="150px"
-              // backgroundColor="lime"
-              borderRadius="35%"
-              label="Chinese"
-              className="md:rounded-[20px]"
-            />
-
-            <CustomButton
-              height="40px"
-              width="150px"
-              // backgroundColor="lime-400"
-              borderRadius="35%"
-              label="Shawama"
-              className="md:rounded-[20px]"
-            />
-          </div> */}
+          
         </div>
         {/* <div className="h-[100vh] bg-red-800 "></div> */}
         <div className=" bg-[]">
