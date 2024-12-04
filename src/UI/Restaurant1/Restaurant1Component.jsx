@@ -62,13 +62,13 @@ function Restaurant1Component() {
           </h1>
 
           <div className="min-h-[40vh] md:h-[60vh] lg:min-h-[80vh] md:w-[80%] lg:w-[60%] bg-[] grid grid-cols-2 gap-5 md:grid-cols-1 mt-5">
-            <ul className=" leading-[45px]">
+            <section className=" leading-[45px] grid grid-cols-3 md:grid-cols-1">
 
           {foodtypes ? (
             foodtypes.map((foodtype, index) => (
               <div
                 key={index}
-                className=" hover:ml-1 transition-all duration-300 hover:font-bold grid grid-cols-3 md:grid-cols-1"
+                className=" hover:ml-1 transition-all duration-300 hover:font-bold "
               >
                  <CustomButton
                     height="40px"
@@ -84,7 +84,7 @@ function Restaurant1Component() {
           ) : (
             <p>Food types loading...</p>
           )}
-            </ul>
+            </section>
           </div>
 
           
