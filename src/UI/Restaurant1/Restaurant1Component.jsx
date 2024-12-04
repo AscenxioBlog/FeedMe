@@ -52,7 +52,7 @@ function Restaurant1Component() {
   }, [selectedfoodtypes, searchQuery]); //Array of dependecies because we need the data to  be fetched only once.
 
   return (
-    <div className="">
+    <div className=" mt-[60px]">
       <RestuarantComponentPic />
 
       <div className=" bg-[#E7F0DC] min-h-[100vh] w-full grid grid-cols-1 md:grid-cols-[20%,79%] gap-1 ">
@@ -62,7 +62,7 @@ function Restaurant1Component() {
           </h1>
 
           <div className="min-h-[40vh] md:h-[60vh] lg:min-h-[80vh] md:w-[80%] lg:w-[60%] bg-[] grid grid-cols-2 gap-5 md:grid-cols-1 mt-5">
-            <section className=" leading-[45px] grid grid-cols-2 gap-4 md:grid-cols-1">
+            <section className=" leading-[45px] grid grid-cols-2 gap-4 md:grid-cols-1 justify-center">
 
           {foodtypes ? (
             foodtypes.map((foodtype, index) => (
