@@ -61,8 +61,8 @@ function Restaurant1Component() {
             EXPLORE CATEGORIES
           </h1>
 
-          <div className="min-h-[40vh] md:h-[60vh] lg:min-h-[80vh] md:w-[80%] lg:w-[60%] bg-[] grid grid-cols-2 gap-5 md:grid-cols-1 mt-5">
-            <section className=" leading-[45px] grid grid-cols-3 gap-4 md:grid-cols-1 justify-center">
+          <div className="min-h-[40vh] md:h-[60vh] lg:min-h-[80vh] md:w-[80%] lg:w-[60%] bg-[] grid grid-cols-1 gap-5 md:grid-cols-1 mt-5">
+            <section className=" leading-[45px] grid grid-cols-3 gap-4 md:grid-cols-1 justify-center w-full ">
 
           {foodtypes ? (
             foodtypes.map((foodtype, index) => (
