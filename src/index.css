@@ -586,7 +586,7 @@ img{
 
 .bay{
     position: absolute;
-    top: 100px;
+    /* top: 100px; */
     opacity: 1;
     animation: body 8s linear;
 }
