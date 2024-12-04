@@ -9,7 +9,6 @@ import AddComponent from "./AdminComponent/AddComponent";
 import AllRestaurant from "./AdminComponent/AllRestaurant";
 import FaqsComponent from "./UI/FaqsComponent/FaqsComponent";
 import Authenticator from "./Authenticator/Authenticator";
-// import RestauarantLandingpage from "./UI/Restaurant1/RestauarantLandingpage";
 import AddMenu from "./AdminComponent/AddMenu";
 import FoodComponent from "./UI/Restaurant1/FoodComponent";
 import Work from "./UI/WorkwithUs/Work";
@@ -22,35 +21,40 @@ import Profile from "./AdminComponent/Profile";
 import CateringComponent from "./UI/CateringComponent/CateringComponent";
 import MysteryComponent from "./UI/MisterySurprise/MysteryComponent";
 import Admin from "./AdminComponent/Admin";
+import Loadme from "./ReusableComponent/Loadme";
 
 function App() {
-  const location = useLocation(); // Now inside BrowserRouter
+  const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
 
+  // Cart State
   const [cart, setCart] = useState(() => {
-    const storedCart = localStorage.getItem('cart');
+    const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
+  // Load cart from localStorage
   useEffect(() => {
-    const storedCart = localStorage.getItem('cart');
+    const storedCart = localStorage.getItem("cart");
     if (storedCart) {
       setCart(JSON.parse(storedCart));
     }
   }, []);
 
+  // Save cart to localStorage on changes
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-    window.dispatchEvent(new Event('storageUpdate'));
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.dispatchEvent(new Event("storageUpdate"));
   }, [cart]);
 
   const [isCartVisible, setCartVisible] = useState("-400px");
 
+  // Cart Handlers
   const addToCart = (product) => {
     setCart((prevCart) => {
-      const existingProduct = prevCart.find(item => item._id === product._id);
+      const existingProduct = prevCart.find((item) => item._id === product._id);
       if (existingProduct) {
-        return prevCart.map(item =>
+        return prevCart.map((item) =>
           item._id === product._id
             ? { ...item, quantity: item.quantity + 1 }
             : item
@@ -62,13 +66,17 @@ function App() {
   };
 
   const removeFromCart = (productToRemove) => {
-    setCart(prevCart => prevCart.filter(product => product._id !== productToRemove._id));
+    setCart((prevCart) =>
+      prevCart.filter((product) => product._id !== productToRemove._id)
+    );
   };
 
   const increaseQuantity = (product) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item._id === product._id ? { ...item, quantity: item.quantity + 1 } : item
+        item._id === product._id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
       )
     );
   };
@@ -89,52 +97,66 @@ function App() {
       0
     );
     alert(`Thank you for your purchase! Total amount: $${totalAmount.toFixed(2)}`);
-    setCart([]); 
-    localStorage.removeItem('cart');
+    setCart([]);
+    localStorage.removeItem("cart");
   };
 
   const toggleCartVisibility = () => {
-    setCartVisible(isCartVisible === "-400px" ? '0px' : '-400px');
+    setCartVisible(isCartVisible === "-400px" ? "0px" : "-400px");
   };
+
+  // Loading State
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 6000); // Simulate loading time
+    return () => clearTimeout(timer); // Cleanup
+  }, []);
 
   return (
     <>
-      {!isAdminRoute && (
-        <HeaderComponent
-          cart={cart}
-          toggleCartVisibility={toggleCartVisibility}
-          isCartVisible={isCartVisible}
-          removeFromCart={removeFromCart}
-          increaseQuantity={increaseQuantity}
-          decreaseQuantity={decreaseQuantity}
-          checkout={checkout}
-        />
+      {loading ? (
+        <Loadme />
+      ) : (
+        <>
+          {!isAdminRoute && (
+            <HeaderComponent
+              cart={cart}
+              toggleCartVisibility={toggleCartVisibility}
+              isCartVisible={isCartVisible}
+              removeFromCart={removeFromCart}
+              increaseQuantity={increaseQuantity}
+              decreaseQuantity={decreaseQuantity}
+              checkout={checkout}
+            />
+          )}
+          <Routes>
+            <Route path="/" element={<IndexComponent />} />
+            <Route path="/restaurant" element={<Restaurant1Component />} />
+            <Route path="/faqs" element={<FaqsComponent />} />
+            <Route
+              path="/menu/:restaurantname/:restaurantid"
+              element={<FoodComponent addToCart={addToCart} />}
+            />
+            <Route path="/auth" element={<Authenticator />} />
+            <Route path="/rider" element={<Work />} />
+            <Route path="/register" element={<RegRestaurant />} />
+            <Route path="/checkout" element={<CheckoutForm />} />
+            <Route path="/payment" element={<PaymentComponent />} />
+            <Route path="/catering" element={<CateringComponent />} />
+            <Route path="/gift" element={<MysteryComponent />} />
+            <Route path="/admin" element={<Admin />}>
+              <Route index element={<AdminIndex />} />
+              <Route path="/admin/add" element={<AddComponent />} />
+              <Route path="/admin/addmenu" element={<AddMenu />} />
+              <Route path="/admin/allrestaurant" element={<AllRestaurant />} />
+              <Route path="/admin/allevent" element={<AllEvent />} />
+              <Route path="/admin/profile" element={<Profile />} />
+            </Route>
+          </Routes>
+          {!isAdminRoute && <FooterComponent />}
+        </>
       )}
-
-      <Routes>
-        <Route path="/" element={<IndexComponent />} />
-        <Route path="/restaurant" element={<Restaurant1Component />} />
-        <Route path="/faqs" element={<FaqsComponent />} />
-        <Route path="/menu/:restaurantname/:restaurantid" element={<FoodComponent addToCart={addToCart} />} />
-        <Route path="/auth" element={<Authenticator />} />
-        <Route path='/rider' element={<Work/>}/>
-        <Route path='/register' element={<RegRestaurant/>}/>
-        <Route path='/checkout' element={<CheckoutForm/>}/>
-        <Route path='/payment' element={<PaymentComponent/>}/>
-        <Route path='/catering' element={<CateringComponent/>}/>
-        <Route path='/gift' element={<MysteryComponent/>}/>
-        <Route path="/admin" element={<Admin />}>
-        {/* <Route path="/admin" element={<AdminComponent />}> */}
-          <Route index element={<AdminIndex/>}/>
-          <Route path='/admin/add' element={<AddComponent/>}/>
-          <Route path='/admin/addmenu' element={<AddMenu/>}/>
-          <Route path='/admin/allrestaurant' element={<AllRestaurant/>}/>
-          <Route path='/admin/allevent' element={<AllEvent/>}/>
-          <Route path='/admin/profile' element={<Profile/>}/>
-        </Route>
-      </Routes>
-
-      {!isAdminRoute && <FooterComponent />}
     </>
   );
 }

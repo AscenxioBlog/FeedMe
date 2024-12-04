@@ -525,3 +525,78 @@ img{
     background-color: rgba(192, 192, 192, 0.855);
     border-bottom: 2px solid #478CCF;
 }
+
+
+
+
+
+
+
+.nav{
+    position: fixed;
+    /* top: 0; */
+    width: 100%;
+    z-index: 10;
+    transition: 2s;
+    
+}
+
+
+.ant{
+    border-radius: 100%;
+    /* box-shadow: 3px 5px 5px yellow; */
+    animation: animal 2s linear infinite;
+}
+
+.ant::before{
+    content: "";
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    border: 0 0 5px rgba(225, 225, 225, .3);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+@keyframes animal {
+    0%{
+        transform: rotate(0deg);
+        box-shadow:5px 1px 4px yellow;
+    }
+    
+    50%{
+        transform: rotate(180deg);
+        box-shadow: 5px 1px 4px pink;
+    }
+
+    100%{
+        transform: rotate(360deg);
+        box-shadow: 5px 1px 4px cadetblue;
+    }
+}
+.sp{
+    /* animation-iteration-count: ; */
+    animation: banks 6s ease-in-out infinite;
+}
+@keyframes banks {
+    50%{
+        color: black;
+    }
+}
+
+.bay{
+    position: absolute;
+    top: 100px;
+    opacity: 1;
+    animation: body 8s linear;
+}
+/* @keyframes body {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+} */
+
+

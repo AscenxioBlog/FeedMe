@@ -4,8 +4,8 @@ import SliderComponent from '../../ReusableComponent/Slider/SliderComponent';
 import CustomInput from '../../ReusableComponent/MyInput/CustomInput';
 
 function CheckoutForm2() {
-    const Delivery = 1000; // Delivery fee
-    const publicKey = 'pk_test_cfd8fb2a57eefcc2ec6f89807437c147f627510f'; // Paystack public key
+    const Delivery = 1000; // Delivery fee in Naira
+    const publicKey = 'pk_test_cfd8fb2a57eefcc2ec6f89807437c147f627510f'; // Replace with your Paystack public key
 
     // State for cart and user details
     const [newcart, setNewcart] = useState(() => {
@@ -22,31 +22,21 @@ function CheckoutForm2() {
     const totalPrice = newcart.reduce((total, item) => total + item.price * item.quantity, 0);
     const totalAmount = (totalPrice + Delivery) * 100; // Convert to kobo for Paystack
 
-    // Update cart on localStorage changes
-    useEffect(() => {
-        const handleStorageChange = () => {
-            const updateCart = localStorage.getItem('cart');
-            setNewcart(updateCart ? JSON.parse(updateCart) : []);
-        };
-
-        window.addEventListener('storageUpdate', handleStorageChange);
-        return () => {
-            window.removeEventListener('storageUpdate', handleStorageChange);
-        };
-    }, []);
-
-    // Paystack component props
+    // Simplified Paystack component props for debugging
     const componentProps = {
-        email,
-        amount: totalAmount, // Amount in kobo
-        metadata: {
-            name: firstName,
-            phone: phoneNumber,
-            address: homeadd,
-        },
+        email: email || 'testuser@example.com', // Default email if none provided
+        amount: totalAmount || 10000, // Default to 100 NGN if amount is 0
         publicKey,
         text: 'Make Payment',
-        onSuccess: () => alert('Thanks for ordering from us!'),
+        metadata: {
+            name: firstName || 'Test User',
+            phone: phoneNumber || '08012345678',
+            address: homeadd || 'Default Address',
+        },
+        onSuccess: (response) => {
+            console.log('Payment successful:', response);
+            alert('Thanks for ordering from us!');
+        },
         onClose: () => alert('Are you sure you want to close?'),
     };
 
@@ -73,7 +63,6 @@ function CheckoutForm2() {
                                 type="text"
                                 value={firstName}
                                 onChange={(e) => setFirstname(e.target.value)}
-                                required
                                 placeholder="First Name"
                                 className="border-[2px] border-solid border-emerald-600 h-[50px] w-full bg-[transparent] rounded-[10px]"
                             />
@@ -84,7 +73,6 @@ function CheckoutForm2() {
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                required
                                 placeholder="Your Email"
                                 className="border-[2px] border-solid border-emerald-600 h-[50px] w-full bg-[transparent] rounded-[10px]"
                             />
@@ -95,7 +83,6 @@ function CheckoutForm2() {
                                 type="text"
                                 value={phoneNumber}
                                 onChange={(e) => setPhone(e.target.value)}
-                                required
                                 placeholder="Telephone"
                                 className="border-[2px] border-solid border-emerald-600 h-[50px] w-full bg-[transparent] rounded-[10px]"
                             />
@@ -106,13 +93,15 @@ function CheckoutForm2() {
                                 type="text"
                                 value={homeadd}
                                 onChange={(e) => setHome(e.target.value)}
-                                required
                                 placeholder="Your full address"
                                 className="border-[2px] border-solid border-emerald-600 h-[50px] w-full bg-[transparent] rounded-[10px]"
                             />
                         </div>
                         <div className="pt-4">
-                            <PaystackButton {...componentProps} className="border-[2px] border-solid border-emerald-600 h-[40px] w-[90%] font-semibold rounded-[10px] lg:ml-3 hover:bg-[#5F8670] cursor-pointer flex justify-center items-center" />
+                            <PaystackButton
+                                {...componentProps}
+                                className="border-[2px] border-solid border-emerald-600 h-[40px] w-[90%] font-semibold rounded-[10px] lg:ml-3 hover:bg-[#5F8670] cursor-pointer flex justify-center items-center"
+                            />
                         </div>
                     </form>
                 </div>
