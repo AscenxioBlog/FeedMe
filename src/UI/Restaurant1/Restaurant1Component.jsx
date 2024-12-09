@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const imageBaseUrl = "http://localhost:5000"; // Base URL of your server
-// import chickcat from "../Files/chickcat.png";
-// import ricecat from "../Files/ricecat.png";
-// import juicecat from "../Files/juicecat.png";
-// import grillcat from "../Files/grillcat.png";
-// import shawacat from "../Files/shawacat.png";
-// import localcat from "../Files/localcat.png";
+
 import CustomButton from "../../ReusableComponent/MyButton/CustomButton";
 import RestuarantComponentPic from "./RestuarantComponentPic";
 import CustomInput from "../../ReusableComponent/MyInput/CustomInput";
