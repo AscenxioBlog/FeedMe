@@ -113,12 +113,24 @@ function App() {
     return () => clearTimeout(timer); // Cleanup
   }, []);
 
+  
+const ScrollToTop=()=>{
+  const {pathname} = useLocation();
+
+  useEffect(()=>{
+      window.scrollTo(0,0);
+
+  },[pathname]);
+  return null;
+};
+
   return (
     <>
       {loading ? (
         <Loadme />
       ) : (
         <>
+           <ScrollToTop/>
           {!isAdminRoute && (
             <HeaderComponent
               cart={cart}
