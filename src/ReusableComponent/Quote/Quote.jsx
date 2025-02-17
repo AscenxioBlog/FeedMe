@@ -34,24 +34,14 @@ function Quote() {
 
   return (
     <div>
-        {/* “I am so clever that sometimes I don’t understand a single word of what I am saying.” —Oscar Wilde */}
-          {/* <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-4">
-      <div className="bg-white p-6 rounded-lg shadow-md text-center">
-        <p className="text-xl font-semibold mb-4">{quote}</p>
-        <button
-          onClick={generateQuote}
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
-        >
-          New Quote
-        </button>
-      </div>
-    </div> */}
-
-<div className=" min-h-[450px] w-full flex justify-center items-center">
-        <div className=" min-h-[400px] w-[70%] bg-[#E7F0DC] rounded-[30px] flex flex-col justify-center items-center p-[20px]">
-          <h1 className=' text-[15px] font-medium mb-6 lg:text-[20px] text-[#5F8670] ' style={{textShadow:'0px 7px 5px orangered'}}>{quote.author}</h1>
+      
+      <div className=" w-full flex justify-center items-center relative">
+        <div className="bg-yellow h-[300px] w-[80%] bg-[#5F8670] rotate-[-4deg] rounded-[30px] absolute -z-10"></div>
+        <div className=" min-h-[300px] w-[80%] bg-[#E7F0DC] rounded-[30px] flex flex-col justify-center items-center  p-[20px] ">
+          <h1 className=' text-[15px] font-medium mb-6 lg:text-[20px] text-[#5F8670] ' >{quote.author}</h1>
           <p className=' text-[20px] font-semibold'>{quote.text}</p>
         </div>
+        
       </div>
   
 

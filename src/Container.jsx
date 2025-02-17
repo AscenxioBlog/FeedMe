@@ -22,10 +22,28 @@ import CateringComponent from "./UI/CateringComponent/CateringComponent";
 import MysteryComponent from "./UI/MisterySurprise/MysteryComponent";
 import Admin from "./AdminComponent/Admin";
 import Loadme from "./ReusableComponent/Loadme";
+import RestaurantLayout from "./UI/Restaurant1/RestaurantLayout";
+import API_URL from "./Config";
+import ProtectedRoute from "./Authenticator/ProtectedRoutes";
 
 function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
+
+  const [currentUser, setCurrentUser] = useState(null);
+  useEffect(() => {
+    fetch(`${API_URL}user/me`, {
+      method: "GET",
+      credentials: "include", // Important to send cookies!
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.user) {
+          setCurrentUser(data.user);
+        }
+      })
+      .catch((err) => console.log("Error fetching user:", err));
+  }, []);
 
   // Cart State
   const [cart, setCart] = useState(() => {
@@ -96,7 +114,7 @@ function App() {
       (total, item) => total + item.price * item.quantity,
       0
     );
-    alert(`Thank you for your purchase! Total amount: $${totalAmount.toFixed(2)}`);
+    alert(`Thank you for your purchase! Total amount: ${totalAmount.toFixed(2)}`);
     setCart([]);
     localStorage.removeItem("cart");
   };
@@ -144,7 +162,7 @@ const ScrollToTop=()=>{
           )}
           <Routes>
             <Route path="/" element={<IndexComponent />} />
-            <Route path="/restaurant" element={<Restaurant1Component />} />
+            <Route path="/restaurant" element={<RestaurantLayout/>} />
             <Route path="/faqs" element={<FaqsComponent />} />
             <Route
               path="/menu/:restaurantname/:restaurantid"
@@ -157,13 +175,17 @@ const ScrollToTop=()=>{
             <Route path="/payment" element={<PaymentComponent />} />
             <Route path="/catering" element={<CateringComponent />} />
             <Route path="/gift" element={<MysteryComponent />} />
-            <Route path="/admin" element={<Admin />}>
+            {/* Protected Admin Route */}
+            <Route 
+              path="/admin/*" 
+              element={<ProtectedRoute element={<Admin />} user={currentUser} />} 
+            >
               <Route index element={<AdminIndex />} />
-              <Route path="/admin/add" element={<AddComponent />} />
-              <Route path="/admin/addmenu" element={<AddMenu />} />
-              <Route path="/admin/allrestaurant" element={<AllRestaurant />} />
-              <Route path="/admin/allevent" element={<AllEvent />} />
-              <Route path="/admin/profile" element={<Profile />} />
+              <Route path="add" element={<AddComponent />} />
+              <Route path="addmenu" element={<AddMenu />} />
+              <Route path="allrestaurant" element={<AllRestaurant />} />
+              <Route path="allevent" element={<AllEvent />} />
+              <Route path="profile" element={<Profile />} />
             </Route>
           </Routes>
           {!isAdminRoute && <FooterComponent />}

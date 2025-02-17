@@ -11,30 +11,11 @@
 .head{
     box-shadow: 0 0 70px gray;
 }
-
-.logo:hover{
-    transform: scale(1.2);
-    transition: 0.5s ease-in-out;
+.faceb:hover{
+    transform: rotateY(180deg);
 }
-.custom-shape-divider-bottom-1722971748 {
-    position: absolute;
-    /* bottom: 0; */
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1722971748 svg {
-    position: relative;
-    display: block;
-    width: calc(102% + 1.3px);
-    height: 87px;
-}
-
-.custom-shape-divider-bottom-1722971748 .shape-fill {
-    fill: #E7F0DC;
+.xx:hover{
+    transform: rotateX(180deg);
 }
 .child{
     /* border-radius: 50%; */
@@ -59,18 +40,7 @@ img{
     background-color: #5F8670;
     color: black;
 }
-.foot a{
-    font-size: larger;
-    color: gray;
-}
-.foot table{
-    width: 350px;
-    height: 300px;
-}
-.foot a:hover{
-    color: cornflowerblue;
-    text-decoration: underline;
-}
+
 .myfood{
     border: 1px solid gray;
 }
@@ -601,3 +571,22 @@ img{
 } */
 
 
+/* .curved-div {
+    width: 100%;
+    height: 300px;
+    background: #3498db;
+    position: relative;
+} */
+  
+@media screen and (min-width:768px) {
+    .curved-div::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #E7F0DC;
+        border-radius: 50% 50% 0 0;
+    }
+}

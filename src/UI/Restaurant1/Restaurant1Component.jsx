@@ -9,8 +9,7 @@ import API_URL from "../../Config";
 
 function Restaurant1Component() {
 
-
-  let [holddata, setHolddata] = useState("");
+  let [holddata, setHolddata] = useState([]);
   let [foodtypes, setFoodtypes] = useState([]);
   let [selectedfoodtypes, setSelected] = useState([]);
   const [searchQuery, setSearchquery] = useState("");
@@ -21,7 +20,7 @@ function Restaurant1Component() {
   };
 
   useEffect(() => {
-    fetch(`${API_URL}api/food-types`)
+    fetch(`${API_URL}restaurants/food-types`)
       .then((res) => res.json())
       .then((data) => setFoodtypes(data))
       .catch((err) => console.log(`Error:${err}`));
@@ -40,7 +39,7 @@ function Restaurant1Component() {
     }
     console.log("Query String:", query.toString());
 
-    fetch(`${API_URL}api/restaurants?${query.toString()}`) //fetched from my server
+    fetch(`${API_URL}restaurants/filter?${query.toString()}`) //fetched from my server
       .then((response) => response.json()) //convert the response to json. (the response can be anything)
       .then((json) => setHolddata(json)) //(then pass the converted data into a useState)
       .catch((err) => console.log(err)); // if there is any error
@@ -98,8 +97,8 @@ function Restaurant1Component() {
               // className=' h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
             />
           </div>
-          <div className=" min-h-[500px] w-[100%] bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-3">
-            {holddata
+          <div className=" min-h-[500px] bg-red-400 w-[100%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-3">
+            {holddata.length > 0
               ? holddata.map((item) => (
                   <>
                     <Link to={`/menu/${item.name}/${item._id}`} key={item._id}>
@@ -142,40 +141,3 @@ function Restaurant1Component() {
 }
 
 export default Restaurant1Component;
-
-{
-  /*     `
-
-{holddata ? (
-   holddata.map((item) => (
-     <>
-
-       <div className=" h-[500px]  bg-white flex flex-col items-center " >
-         <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
-           <div className=" h-[350px] w-[350px] md:w-[320px] lg:w-[380px] bg-red-800 ">
-             <img src={item.image} />
-             {console.log(item.image)}
-           </div>
-           <div className=" h-[90px]  bg-[] grid grid-cols-[70%,30%]">
-             <div className=" bg-[] flex flex-col justify-center pl-2">
-               <h1 className=" font-bold text-[17px] mb-1">
-                 {item.name}
-               </h1>
-               <p>{item.address}</p>
-             </div>
-             <div className=" bg-[] flex justify-center items-center text-[18px]">
-               <span className=" text-[#FF5A3C]">
-                 <a href="" className=" underline">
-                   View More
-                 </a>
-               </span>
-             </div>
-           </div>
-         </div>
-       </div>
-     </>
-   ))
- ) : (
-   <p>Poor network...loading</p>
- )}` */
-}

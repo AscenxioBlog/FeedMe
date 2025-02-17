@@ -4,6 +4,7 @@ import IndexComponent2 from './IndexComponent2'
 import IndexComponent3 from './IndexComponent3'
 import IndexComponent4 from './IndexComponent4'
 import IndexComponent5 from './IndexComponent5'
+import BusinessWork from './BusinessWork'
 
 function IndexComponent() {
   return (
@@ -11,8 +12,10 @@ function IndexComponent() {
         <IndexComponent1/>
         <IndexComponent4/>
         <IndexComponent2/>
-        <IndexComponent5/>
+        <BusinessWork/>
+        {/* <IndexComponent5/> */}
         <IndexComponent3/>
+        
     </div>
   )
 }
