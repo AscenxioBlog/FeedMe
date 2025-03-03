@@ -23,7 +23,7 @@ function Signup2({ onLoginSuccess,setusername }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     try {
       const response = await fetch(`${API_URL}user`, {
         method: "POST",
