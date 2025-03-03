@@ -48,16 +48,7 @@ function Signup2({ onLoginSuccess,setusername }) {
           break;
         default:
           alert(data.error || "An unexpected error occurred"); 
-    //       chunk-3IHV7RO6.js?v=2e35549d:521 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
-    // at CheckoutForm2 (http://localhost:5173/src/UI/CheckoutForm/CheckoutForm2.jsx:26:31)
-    // at div
-    // at CheckoutForm
-    // at RenderedRoute (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=2e35549d:4092:5)
-    // at Routes (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=2e35549d:4531:5)
-    // at App (http://localhost:5173/src/Container.jsx:43:20)
-    // at Router (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=2e35549d:4474:15)
-    // at BrowserRouter (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=2e35549d:5219:5)
-    // at Container
+          break;
       }
     } catch (error) {
       console.error("Error:", error);
