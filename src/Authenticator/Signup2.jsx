@@ -25,7 +25,7 @@ function Signup2({ onLoginSuccess,setusername }) {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${API_URL}/user`, {
+      const response = await fetch(`${API_URL}user`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
