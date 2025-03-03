@@ -25,8 +25,7 @@ function SignIn2({onLoginSuccess,setusername}) {
   const forhandleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const response = await fetch(`${API_URL}login`, {
-      const response = await fetch(`http://localhost:5000/user/login`, {
+      const response = await fetch(`${API_URL}user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,7 +52,7 @@ function SignIn2({onLoginSuccess,setusername}) {
 
       // const decodedToken = jwt_decode(data.token);
       // console.log(decodedToken)
-
+      
     } catch (err) {
       console.error("Login failed : ", err.message);
     }
