@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { FaUserAstronaut } from "react-icons/fa6";
-import { ImHome } from "react-icons/im";
-import { FaCcMastercard } from "react-icons/fa";
-import { FaTruck } from "react-icons/fa";
+import Work from "./Work"
+import { BsPeople } from 'react-icons/bs'
+import { RiRestaurantLine } from 'react-icons/ri'
+import { FaUserPlus } from 'react-icons/fa'
+import { FaUsers } from 'react-icons/fa6'
+// import { FaUserAstronaut } from "react-icons/fa6";
+// import { ImHome } from "react-icons/im";
+// import { FaCcMastercard } from "react-icons/fa";
+// import { FaTruck } from "react-icons/fa";
 
 function IndexComponent4() {
     var [restaurant,setRestuarant]=useState(0)
@@ -61,17 +66,19 @@ function IndexComponent4() {
     
 
   return (
-    <div className='min-h-[110vh] w-full bg-[#E7F0DC] flex flex-col items-center pb-[50px] md:pb-1 relative mb-[100px]'>
-        <section className=" h-[100px] bg-[] w-full text-center">
+    <div className='min-h-[75vh] pb-[120px] sm:pb-[100px] w-full bg-[#E7F0DC] flex flex-col items-center relative mb-[100px]'>
+        {/* <section className=" h-[100px] bg-[] w-full text-center">
             <h1 className=' text-[35px] font-bold'>How It Works</h1>
-            <p className=' text-[20px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, a.</p>
-        </section>
+            <p className=' text-[20px] mt-2'>Ordering your favorite meals is easy! Just follow these simple steps</p>
+        </section> */}
 
-        <section className=" min-h-[300px] w-[90%] bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] mt-[50px]">
+        <Work/>
+
+        {/* <section className=" min-h-[300px] w-[90%] bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] mt-5">
             <div className="h-[300px] bg-white flex flex-col justify-center relative">
                 <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[45%] md:right-[40%] text-[25px] text-center">1</div>
                 <div className=" h-[150px] w-full bg-[] flex justify-center items-center">
-                <FaUserAstronaut size={100} color='#E7F0DC' />
+                 <FaUserAstronaut size={100} color='#5F8670' />
                 </div>
                 <div className=" text-center">
                     <h1 className=' text-[20px] font-bold'>Search by address</h1>
@@ -83,7 +90,7 @@ function IndexComponent4() {
             <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[45%] md:right-[40%] text-[25px] text-center">2</div>
 
             <div className=" h-[150px] w-full bg-[] flex justify-center items-center">
-            <ImHome size={100} color='#E7F0DC' />
+            <ImHome size={100} color='#5F8670' />
                 </div>
                 <div className=" text-center">
                     <h1 className=' text-[20px] font-bold'>Choose a restaurant</h1>
@@ -96,7 +103,7 @@ function IndexComponent4() {
             <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[45%] md:right-[40%] text-[25px] text-center">3</div>
  
             <div className=" h-[150px] w-full bg-[] flex justify-center items-center">
-            <FaCcMastercard size={100} color='#E7F0DC' />
+            <FaCcMastercard size={100} color='#5F8670' />
                 </div>
                 <div className=" text-center">
                     <h1 className=' text-[20px] font-bold'>Pay by card or cash</h1>
@@ -108,28 +115,53 @@ function IndexComponent4() {
             <div className="how h-[40px] w-[40px] bg-white rounded-[50%] absolute top-[-15px] right-[45%] md:right-[40%] text-[25px] text-center">4</div>
 
             <div className=" h-[150px] w-full bg-[] flex justify-center items-center">
-            <FaTruck  size={100} color='#E7F0DC'/>
+            <FaTruck  size={100} color='#5F8670'/>
                 </div>
                 <div className=" text-center">
                     <h1 className=' text-[20px] font-bold'>Delivery - Takeaway</h1>
                     <p className=' text-[16px]'>You are lazy? Are you <br />backing home?</p>
                 </div>
             </div>
-        </section>
+        </section> */}
  
-        <div className=" min-h-[60px] md:min-h-[100px] w-[95%] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4  gap-3 bg-[#5F8670] absolute mb-[100px] mt-10 md:mb-0 bottom-[-150px] md:bottom-[-50px] rounded-[10px]">
-            <div className="h-[40px] md:h-[100px] bg-[] text-white  flex justify-center items-center">
-                <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>Restaurant:</span> <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>{restaurant}+</span>
+        <div className='bg-[#5F8670] text-white py-6 px-4 absolute -bottom-10 rounded-lg w-[80%]'>
+          <div className="max-w-6xl mx-auto flex flex-wrap justify-around gap-6">
+            <div className="flex items-center space-x-2 text-lg">
+              <span className="text-2xl"><RiRestaurantLine/></span>
+              <p>
+                <span className="font-bold">{restaurant}+</span> Restaurants
+              </p>
             </div>
-            <div className="h-[40px] md:h-[100px] bg-[] text-white flex justify-center items-center">
+            <div className="flex items-center space-x-2 text-lg">
+              <span className="text-2xl"><BsPeople/></span>
+              <p>
+                <span className="font-bold">{people}+</span> People Served
+              </p>
+            </div>
+            <div className="flex items-center space-x-2 text-lg">
+              <span className="text-2xl"><FaUserPlus/></span>
+              <p>
+                <span className="font-bold">{user}+</span> Registered Users
+              </p>
+            </div>
+            <div className="flex items-center space-x-2 text-lg">
+              <span className="text-2xl"><FaUsers/></span>
+              <p>
+                <span className="font-bold">{menu}+</span> Total User
+              </p>
+            </div>
+          </div>
+                {/* <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>Restaurant:</span> <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>{restaurant}+</span> */}
+            
+            {/* <div className="h-[40px] bg-[] text-white flex justify-center items-center">
                 <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>People Served:</span> <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>{people}+</span>
             </div>
-            <div className="h-[40px] md:h-[100px] bg-[] text-white  flex justify-center items-center">
+            <div className="h-[40px] bg-[] text-white  flex justify-center items-center">
                <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>Registered Users:</span>  <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>{user}+</span>
             </div>
-            <div className="h-[40px] md:h-[100px] bg-[] text-white  flex justify-center items-center">
+            <div className="h-[40px] bg-[] text-white  flex justify-center items-center">
                 <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>Total User</span><span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>{menu}+</span>
-            </div>
+            </div> */}
         </div>
 
     </div>

@@ -35,7 +35,7 @@ function Holdsign({login,setLogin,setIsAuthenticated,setusername}) {
   };
 
   return (
-    <div className="forms-section bg-[#1616146b] w-full transition-all duration-300 relative" style={{marginTop:login}} onClick={()=>setLogin('-130vh')}>
+    <div className="forms-section h-screen bg-[#1616146b] w-full transition-all duration-300 relative" style={{marginTop:login}} onClick={()=>setLogin('-130vh')}>
       <div className="h-[30px] w-[30px] bg-white absolute right-3 top-3 flex justify-center items-center text-[2rem] text-[red] cursor-pointer" onClick={()=>setLogin('-130vh')}>x</div>
       <div className="forms" onClick={(e)=>e.stopPropagation()}>
         <SignIn2 onLoginSuccess={handleLoginSuccess}/>

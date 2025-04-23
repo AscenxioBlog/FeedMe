@@ -3,10 +3,11 @@ import Quote from '../../ReusableComponent/Quote/Quote'
 
 function IndexComponent3() {
   return (
-    <div className=' min-h-[600px] w-full bg-[] '>
+    <div className=' min-h-[500px] w-full'>
       <div className=" h-[100px] w-full bg-[] text-[30px] text-slate-600 font-bold flex justify-center items-center">
         <h1>Healthy Eating Tips</h1>
       </div>
+
       <Quote/>
 
       {/* <div className=" h-[450px] w-full flex justify-center items-center">

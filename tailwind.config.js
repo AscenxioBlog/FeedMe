@@ -13,6 +13,18 @@ export default {
       colors: {
         'custom-orange': '#5F8670',
       },
+      animation: {
+        scroll: "scroll 25s linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" }, // Shift half to avoid jumping
+        },
+      },
+      boxShadow: {
+        'subtle-all': '0px 3px 5px rgba(0, 0, 0, 0.1)',
+      }
     },
   },
   plugins: [

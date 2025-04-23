@@ -9,10 +9,10 @@ function HeaderMini(props) {
        <div onClick={props.dropdown} className=" lg:hidden">
           <div className=' w-full bg-[] grid absolute left-0 h-[300px] z-10' style={{opacity:props.setOpacity, top:props.setView, transition:'1s'}}>
 
-     <Link className=" subnav text-[20px] font-bold  flex items-center pl-3"  to='/'>Home</Link>
-           <Link className=" subnav font-bold  flex items-center pl-3 " to='/restaurant'>Restaurants</Link>
-           <Link className=" subnav font-bold  flex items-center pl-3" to='/faqs'>FAQs</Link>
-         <Link className=" subnav font-bold  flex items-center pl-3" to='/catering'>Catering Services</Link>
+            <Link className=" subnav text-[20px] font-bold  flex items-center pl-3"  to='/'>Home</Link>
+            <Link className=" subnav font-bold  flex items-center pl-3 " to='/restaurant'>Restaurants</Link>
+            <Link className=" subnav font-bold  flex items-center pl-3" to='/faqs'>FAQs</Link>
+            <Link className=" subnav font-bold  flex items-center pl-3" to='/catering'>Catering Services</Link>
            <Link  className=" subnav font-bold  flex items-center pl-3" to='/gift'>Surprise Package</Link>
            {/* <Link className=" subnav font-bold  flex items-center pl-3"to=''>Login</Link> */}
 

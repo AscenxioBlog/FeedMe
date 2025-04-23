@@ -25,11 +25,12 @@ function SignIn2({onLoginSuccess,setusername}) {
   const forhandleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${API_URL}/auth/login`, {
+      const response = await fetch(`${API_URL}user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include", // Ensures cookies are sent and stored
         body: JSON.stringify(signindata),
       });
 
@@ -42,15 +43,14 @@ function SignIn2({onLoginSuccess,setusername}) {
       } else if (data.passwordMessage) {
         setPasswordvalidator(data.passwordMessage);
       }
-      console.log(data); // Here you will get the JWT token if login is successful
-      localStorage.setItem("token", data.token);
+      console.log(data); 
       localStorage.setItem("username", data.username);
 
       // const decodedToken = jwt_decode(data.token);
       // console.log(decodedToken)
-
+      
     } catch (err) {
-      console.error("Login failed:", err.message);
+      console.error("Login failed : ", err.message);
     }
   };
 
