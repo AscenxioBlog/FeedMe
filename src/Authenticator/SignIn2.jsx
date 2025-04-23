@@ -25,7 +25,7 @@ function SignIn2({onLoginSuccess,setusername}) {
   const forhandleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${API_URL}sign-in`, {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,11 +35,7 @@ function SignIn2({onLoginSuccess,setusername}) {
 
       const data = await response.json();
 
-      if (data.message) {
-        alert(data.message)
-        onLoginSuccess(true,"-130vh")
-        window.location.reload()
-      } 
+  
       
       if (data.emailMessage) {
         setEmailValidator(data.emailMessage);
