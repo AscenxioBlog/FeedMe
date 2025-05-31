@@ -1,4 +1,4 @@
 // src/config.js
-const API_URL = "https://online-food-backend-jbyy.onrender.com/";
+const API_URL = "https://food-backend-3xb1.onrender.com/";
 
 export default API_URL;
